@@ -1,16 +1,22 @@
-import Helper
+def isInteger(value):
+	"""Returns true if entered value is integer, otherwise false."""
+	try:
+		int(value)
+		return True
+	except ValueError:
+		return False
 
 numberOfLines = 0
 numberOfBits = 0
 numbers = []
 counters = []
 
-with open('Day03/Day03.txt') as file:
+with open('Day03/Day03Input.txt') as file:
     for line in file:
         numberOfLines += 1
         tempList = list(line)
 
-        if not (Helper.isInteger(tempList[-1])):
+        if not (isInteger(tempList[-1])):
             tempList.pop()
 
         numberOfBits = len(tempList)
@@ -24,7 +30,7 @@ for number in numbers:
         counters[i] += int(number[i])
         
 print('Bit counters: ', counters)
-print('\n')
+print()
 
 gammaRateList = []
 epsilonRateList = []
@@ -44,13 +50,14 @@ epsilonRateBinary = ''.join(epsilonRateList)
 
 print('Gamma Rate Binary: ', gammaRateBinary)
 print('Epsilon Rate Binary: ', epsilonRateBinary)
-print('\n')
+print()
 
 gammaRateDecimal = int(gammaRateBinary, 2)
 epsilonRateDecimal = int(epsilonRateBinary, 2)
 
 print('Gamma Rate Decimal: ', gammaRateDecimal)
 print('Epsilon Rate Decimal: ', epsilonRateDecimal)
-print('\n')
+print()
 
 print('FINAL RESULT: ', gammaRateDecimal * epsilonRateDecimal)
+print()

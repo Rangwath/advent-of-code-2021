@@ -1,7 +1,7 @@
 horizontalPos = 0
 depth = 0
 
-with open('Day02/Day02.txt') as file:
+with open('Day02/Day02Input.txt') as file:
     for line in file:
         splitLine = line.split()
         print(splitLine)
@@ -21,7 +21,8 @@ with open('Day02/Day02.txt') as file:
         else:
           print("ERROR")
 
-print('\n')
+print()
 print("FINAL Horizontal Position: ", horizontalPos)
 print("FINAL Depth: ", depth)
 print("FINAL RESULT: ", horizontalPos * depth)
+print()

@@ -1,6 +1,6 @@
 depths = []
 
-with open('Day01/Day01.txt') as file:
+with open('Day01/Day01Input.txt') as file:
     for line in file:
         depths.append(int(line))
 
@@ -16,5 +16,6 @@ for i in range(len(depths)):
     else:
         print(' - decreased')
 
-print('\n')
+print()
 print('Number of increments: ', counter)
+print()

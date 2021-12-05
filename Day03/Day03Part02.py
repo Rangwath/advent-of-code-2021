@@ -1,16 +1,22 @@
-import Helper
+def isInteger(value):
+	"""Returns true if entered value is integer, otherwise false."""
+	try:
+		int(value)
+		return True
+	except ValueError:
+		return False
 
 numberOfLines = 0
 numberOfBits = 0
 counters = []
 allNumbers = []
 
-with open('Day03/Day03.txt') as file:
+with open('Day03/Day03Input.txt') as file:
     for line in file:
         numberOfLines += 1
         tempList = list(line)
 
-        if not (Helper.isInteger(tempList[-1])):
+        if not (isInteger(tempList[-1])):
             tempList.pop()
 
         numberOfBits = len(tempList)
@@ -151,3 +157,4 @@ print('Scrubber Number Decimal: ', scrubberNumberDecimal)
 print()
 
 print('FINAL RESULT: ', oxygenNumberDecimal * scrubberNumberDecimal)
+print()

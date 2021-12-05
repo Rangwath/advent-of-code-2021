@@ -1,4 +1,10 @@
-import Helper
+def isInteger(value):
+	"""Returns true if entered value is integer, otherwise false."""
+	try:
+		int(value)
+		return True
+	except ValueError:
+		return False
 
 class BingoNumber:
     def __init__(self, number, board, coordX, coordY, drawn):
@@ -22,7 +28,7 @@ boardNumber = 1
 counter = 0
 xCounter = 1
 
-with open('Day04/Day04.txt') as file:
+with open('Day04/Day04Input.txt') as file:
     for line in file:
 
         if (line == '\n'):            
@@ -36,7 +42,7 @@ with open('Day04/Day04.txt') as file:
                 drawnNumbers.append(int(number))
         else:
             tempList = line.split()
-            if not (Helper.isInteger(tempList[-1])):
+            if not (isInteger(tempList[-1])):
                 tempList.pop()
             
             tempBingoList = []
